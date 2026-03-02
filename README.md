@@ -1,32 +1,57 @@
 # zero-model
-This code is train a model from zero
-这是一个基于 NumPy 手写的类 Word2Vec（CBOW 思想）词向量训练与预测系统。它包含一个训练脚本和一个交互式预测脚本。  
-📂 项目结构  
-代码 1 (训练脚本): 读取语料库，通过反向传播更新词向量和权重，并将模型保存为 .json 和 .npz 文件。  
-代码 2 (推理脚本): 加载训练好的模型参数，根据输入的文本预测下一个可能出现的字符。  
-🛠️ 环境依赖  
+This code is train a model from zero  
+# zero-model  
+  
+This code trains a model from zero.  
+  
+This is a Word2Vec (CBOW concept) word vector training and prediction system written in NumPy. It includes a training script and an interactive prediction script.  
+  
+📂 Project Structure  
+  
+Code 1 (Training Script): Reads the corpus, updates word vectors and weights through backpropagation, and saves the model as .json and .npz files.  
+  
+Code 2 (Inference Script): Loads the trained model parameters and predicts the next possible character based on the input text.  
+  
+🛠️ Environment Dependencies  
+  
 Python 3.x  
+  
 NumPy  
-📝 数据准备  
-在运行之前，请确保目录下有以下文件：  
-output.txt: 用于训练的原始文本语料。  
-Tokenizer-full.json: 词表文件（格式为 {"字符": ID}）。  
-🚀 使用指南  
-1. 训练模型  
-运行训练脚本来生成词向量：  
-python train.py   
-
-训练原理: 脚本会读取每一行文本，利用当前字符之前的所有词作为上下文，预测下一个词。  
-产出文件:  
-model_weights.npz: 存储输出层权重 W_out 和偏置 b_out。  
-word2vec.json: 存储训练好的词向量。  
-2. 文本预测  
-模型训练完成后，运行推理脚本进行交互：  
-python predict.py  
-
-功能: 输入一段话，程序会根据平均词向量计算出概率最高的 Top-5 候选字。  
-⚙️ 超参数调整  
-你可以在代码 1 中修改以下参数以优化效果：  
-D = 128: 词向量的维度。  
-lr = 0.05: 学习率。  
-epoch_times = 10: 训练轮次。  
+  
+📝 Data Preparation   
+  
+Before running, ensure the following files are in the directory:  
+  
+output.txt: The original text corpus used for training.  
+  
+Tokenizer-full.json: The vocabulary file (formatted as {"character": ID}).  
+  
+🚀 User Guide  
+  
+1. Training the Model  
+  
+Run the training script to generate word vectors: `python train.py`  
+  
+Training Principle: The script reads each line of text, using all words preceding the current character as context to predict the next word.  
+  
+Output Files:  
+  
+`model_weights.npz`: Stores the output layer weights `W_out` and biases `b_out`.  
+  
+`word2vec.json`: Stores the trained word vectors.  
+  
+2. Text Prediction    
+  
+After the model training is complete, run the inference script for interaction: `python predict.py`  
+  
+Function: Input a sentence, and the program will calculate the top-5 candidate characters with the highest probability based on the average word vectors.  
+  
+⚙️ Hyperparameter Tuning  
+  
+You can modify the following parameters in the code to optimize the effect:  
+  
+`D = 128`: The dimension of the word vectors.  
+  
+`lr = 0.05`: The learning rate.  
+  
+`epoch_times = 10`: The number of training epochs.  
