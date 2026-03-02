@@ -1,3 +1,5 @@
+# 从零用 NumPy 实现 Word2Vec (CBOW) + 字符级预测模型
+只用 numpy 从头训练词向量，还能根据上文预测下一个字！
 # zero-model
 This code is train a model from zero  
 # zero-model  
